@@ -481,6 +481,12 @@ static const NSInteger kDefaultColumnCount = 3;
     }
   } else {
     TT_INVALIDATE_TIMER(_editHoldTimer);
+	  
+	  if ([_delegate respondsToSelector:@selector(launcherViewShouldBeginEditing:)]) {
+		  if (![_delegate launcherViewShouldBeginEditing:self]) {
+			  return;
+		  }
+	  }
 
     _editHoldTimer = [NSTimer scheduledTimerWithTimeInterval:kEditHoldTimeInterval
                               target:self selector:@selector(editHoldTimer:)

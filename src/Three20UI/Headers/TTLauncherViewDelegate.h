@@ -37,5 +37,7 @@
 
 - (void)launcherViewDidEndEditing:(TTLauncherView*)launcher;
 
+- (BOOL)launcherViewShouldBeginEditing:(TTLauncherView*)launcher;
+
 @end
 
